@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>People Counter</title>
+    <style>
+        body { font-family: Arial; text-align: center; margin: 20px; }
+        #video { border: 2px solid #333; border-radius: 8px; width: 640px; }
+        #count { font-size: 2em; color: red; margin-top: 10px; }
+        button { padding: 10px 20px; margin-top: 20px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>People Counter</h1>
+    <div>
+        <button onclick="toggleVideo()">Show/Hide Video</button>
+    </div>
+    <div id="video-container" style="display:none;">
+        <img id="video" src="/video_feed">
+    </div>
+    <div>
+        <h2>Current Count: <span id="count">0</span></h2>
+    </div>
+    <div class="status">
+        <strong>People Count:</strong> <span id="count">0</span>
+        <strong>Density:</strong> <span id="density">Low</span>
+    </div>
+<script>
+    async function updateCount() {
+        try {
+            const res = await fetch('/count');
+            const data = await res.json();
+            document.getElementById('count').innerText = data.current_count;
+            document.getElementById('density').innerText = data.density;
+
+            // Optional: Change color based on density
+            const densityEl = document.getElementById('density');
+            if (data.density === "Low") densityEl.style.color = "green";
+            else if (data.density === "Medium") densityEl.style.color = "orange";
+            else densityEl.style.color = "red";
+
+        } catch (err) {
+            console.error("Error fetching count:", err);
+        }
+    }
+
+    setInterval(updateCount, 1000); // Update every 1 second
+</script>
+<script>
+function toggleVideo() {
+    const container = document.getElementById('video-container');
+    container.style.display = container.style.display === 'none' ? 'block' : 'none';
+}
+
+// Poll the live count every second
+async function updateCount() {
+    try {
+        const res = await fetch('/count');
+        const data = await res.json();
+        document.getElementById('count').innerText = data.current_count;
+    } catch (e) {
+        console.log("Error fetching count", e);
+    }
+}
+setInterval(updateCount, 1000);
+</script>
+</body>
+</html>
