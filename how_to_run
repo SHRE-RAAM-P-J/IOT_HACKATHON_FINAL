@@ -1,15 +1,40 @@
-### **How to Run**
-1. **Create a folder** named `yolo` (all lowercase) on your Desktop.  
-2. **Paste the `app.py` file** inside the `yolo` folder.  
-3. **Copy all files** from the `model` folder and **paste them** inside the `yolo` folder.  
-4. **Create a folder** inside `yolo` named `templates` and paste `index.html` inside it.  
-5. **Create another folder** inside `yolo` named `static` and paste `style.css` and `script.js` inside it.  
-6. Your folder must now contain:
-   - 1 Python file: `app.py`  
-   - 7 YOLO model files  
-   - 2 folders: `templates` and `static`
+# Supermarket Crowd Analyzer
 
-### **Run the App**
-```bash
-navigate to desktop 
-python app.py
+This project uses an ESP32-CAM and YOLO object detection to count people in a supermarket and display live video with real-time counts in a web browser.
+
+---
+
+## **Hardware Components**
+
+- ESP32-CAM
+- FTDI Programmer
+- Mobile Adapter (for continuous power)
+- Jumper Wires
+- Micro USB cable (for flashing)
+
+> **Note:** Breadboard is optional and not used in this setup.
+
+---
+
+## **Hardware Setup**
+
+1. Open **Arduino IDE** and paste the ESP32-CAM hardware code.
+2. Update your **Wi-Fi SSID and password** in the code.
+3. Ensure the **FTDI programmer and all wires** are properly connected.
+4. Upload the code to your ESP32-CAM.
+5. After uploading, the ESP32-CAM will display an **IP address**. Paste this IP into a web browser to view the live video stream.
+
+---
+
+## **Software Setup**
+
+### **Folder Structure**
+
+1. Create a folder named `yolo` on your Desktop.
+2. Paste the `app.py` file inside the `yolo` folder.
+3. Copy all files from the `model` folder (YOLO model files) and paste them inside `yolo`.
+4. Create a folder named `templates` inside `yolo` and paste `index.html` inside it.
+5. Create a folder named `static` inside `yolo` and paste `style.css` and `script.js` inside it.
+
+Your folder should now look like this:
+
