@@ -1,0 +1,16 @@
+Here’s a text version of the hardware you used for your IoT Supermarket Crowd Analyzer project:
+
+---
+
+IoT Hardware Components:
+
+1. ESP32-CAM module (AI-Thinker)
+2. 5V 2A or higher mobile adapter (for constant power supply)
+3. Jumper wires (male-to-female or female-to-female as needed)
+4. USB cable (for initial flashing of ESP32-CAM)
+5. FTDI programmer
+6. Battery pack / Li-ion 5V power source(optional)
+
+---
+
+This list is ready to be saved as a `.txt` file.
