@@ -36,5 +36,6 @@ This project uses an ESP32-CAM and YOLO object detection to count people in a su
 4. Create a folder named `templates` inside `yolo` and paste `index.html` inside it.
 5. Create a folder named `static` inside `yolo` and paste `style.css` and `script.js` inside it.
 
-Your folder should now look like this:
+
+
 
